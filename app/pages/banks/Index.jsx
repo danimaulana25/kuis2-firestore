@@ -9,10 +9,13 @@ const MySwal = withReactContent(Swal);
 
 const BanksIndex = () => {
   const [banks, setBanks] = React.useState([]);
+  const [isLoading, setIsLoading] = React.useState(true);
+
 
   React.useEffect(() => {
     const bnk = onSnapshot(collection(db, "banks"), (snapshot) => {
       setBanks(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      setIsLoading(false);
     });
     console.log(bnk);
     return bnk;
@@ -55,7 +58,7 @@ const BanksIndex = () => {
             </tr>
           </thead>
           <tbody>
-            {banks.length === 0 ? <tr>
+            {isLoading ? <tr>
               <td colSpan={5} className="py-10 text-center bg-[#FFFBEB]">
                 <div role="status">
                   <svg aria-hidden="true" class="inline w-12 h-12 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -85,6 +88,10 @@ const BanksIndex = () => {
                 </td>
               </tr>
             ))}
+            {(banks.length === 0 && !isLoading) && <tr>
+              <td colSpan={4} className="bg-[#FFFBEB] font-semibold text-xl
+              ">No data.</td>
+            </tr>}
           </tbody>
         </table>
       </div>

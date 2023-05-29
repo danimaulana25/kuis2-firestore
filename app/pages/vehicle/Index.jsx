@@ -9,10 +9,12 @@ const MySwal = withReactContent(Swal);
 
 const VechicleIndex = () => {
   const [vehicle, setVehicle] = React.useState([]);
+  const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
     const vhc = onSnapshot(collection(db, "vehicle"), (snapshot) => {
       setVehicle(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      setIsLoading(false);
     });
     return vhc;
   }, []);
@@ -38,7 +40,7 @@ const VechicleIndex = () => {
   return (
     <div className="relative p-5 overflow-x-auto">
       <div className="flex items-center justify-between mb-11">
-        <h1 className="text-5xl font-semibold text-white">List Vehicles</h1>
+        <h1 className="text-5xl font-semibold text-white">List Vehicles </h1>
         <Link to="/vehicle/create" className="btn text-black bg-[#F9D949] hover:bg-[#F7C04A]">Create New</Link>
       </div>
       <div className="overflow-x-auto">
@@ -53,7 +55,7 @@ const VechicleIndex = () => {
             </tr>
           </thead>
           <tbody>
-            {vehicle.length === 0 ? <tr>
+            {isLoading ? <tr>
               <td colSpan={5} className="py-10 text-center bg-[#FFFBEB]">
                 <div role="status">
                   <svg aria-hidden="true" class="inline w-12 h-12 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -84,6 +86,10 @@ const VechicleIndex = () => {
                 </td>
               </tr>
             ))}
+            {(vehicle.length === 0 && !isLoading) && <tr>
+              <td colSpan={5} className="bg-[#FFFBEB] font-semibold text-xl
+              ">No data.</td>
+            </tr>}
           </tbody>
         </table>
       </div>
