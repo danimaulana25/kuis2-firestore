@@ -71,6 +71,7 @@ const BrandsEdit = () => {
                         <p className="text-white">Kembali</p>
                     </div>
                 </Link>
+                <h1 className="text-5xl text-white font-semibold mt-3">Update {name} </h1>
             </div>
             <form>
                 <div className="mb-6">
