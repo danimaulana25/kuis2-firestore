@@ -14,6 +14,7 @@ const BanksIndex = () => {
     const bnk = onSnapshot(collection(db, "banks"), (snapshot) => {
       setBanks(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     });
+    console.log(bnk);
     return bnk;
   }, []);
 

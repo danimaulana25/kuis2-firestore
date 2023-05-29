@@ -4,28 +4,28 @@ import { app, db } from "../firebase";
 import { collection, onSnapshot, deleteDoc, doc } from "firebase/firestore";
 
 const Dashboard = () => {
-  const [banks, setBanks] = React.useState([]);
-  const [brands, setBrand] = React.useState([]);
-  const [category, setCategory] = React.useState([]);
-  const [vehicle, setVehicle] = React.useState([]);
+  // const [banks, setBanks] = React.useState([]);
+  // const [brands, setBrand] = React.useState([]);
+  // const [category, setCategory] = React.useState([]);
+  // const [vehicle, setVehicle] = React.useState([]);
 
-  React.useEffect(() => {
-    const bnk = onSnapshot(collection(db, "banks"), (snapshot) => {
-      setBanks(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    });
+  // React.useEffect(() => {
+  //   const bnk = onSnapshot(collection(db, "banks"), (snapshot) => {
+  //     setBanks(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  //   });
 
-    const brn = onSnapshot(collection(db, "brands"), (snapshot) => {
-      setBrand(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    });
+  //   const brn = onSnapshot(collection(db, "brands"), (snapshot) => {
+  //     setBrand(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  //   });
 
-    const ctg = onSnapshot(collection(db, "category"), (snapshot) => {
-      setCategory(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    });
+  //   const ctg = onSnapshot(collection(db, "category"), (snapshot) => {
+  //     setCategory(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  //   });
 
-    const vhc = onSnapshot(collection(db, "vehicle"), (snapshot) => {
-      setVehicle(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    });
-  }, []);
+  //   const vhc = onSnapshot(collection(db, "vehicle"), (snapshot) => {
+  //     setVehicle(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  //   });
+  // }, []);
   return (
     <>
 
@@ -36,7 +36,7 @@ const Dashboard = () => {
             <Link to={'/vehicle'} class="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-500 ease-out  rounded-lg shadow-md group">
               <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-500 -translate-x-full bg-[#2C74B3] group-hover:translate-x-0 ease">
                 <div className="flex flex-col items-center justify-center">
-                  <p className="text-3xl font-semibold text-gray-100 ">Amount ({vehicle.length})</p>
+                  {/* <p className="text-3xl font-semibold text-gray-100 ">Amount ({vehicle.length})</p> */}
                   <svg class="w-6 h-6 text-gray-100 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                   </svg>
                 </div>
@@ -59,7 +59,7 @@ const Dashboard = () => {
             <Link to={'/brands'} class="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-500 ease-out  rounded-lg shadow-md group">
               <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-500 -translate-x-full bg-[#2C74B3] group-hover:translate-x-0 ease">
                 <div className="flex flex-col items-center justify-center">
-                  <p className="text-3xl font-semibold text-gray-100 ">Amount ({brands.length})</p>
+                  {/* <p className="text-3xl font-semibold text-gray-100 ">Amount ({brands.length})</p> */}
                   <svg class="w-6 h-6 text-gray-100 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                   </svg>
                 </div>
@@ -82,7 +82,7 @@ const Dashboard = () => {
             <Link to={'/banks'} class="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-500 ease-out  rounded-lg shadow-md group">
               <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-500 -translate-x-full bg-[#2C74B3] group-hover:translate-x-0 ease">
                 <div className="flex flex-col items-center justify-center">
-                  <p className="text-3xl font-semibold text-center text-gray-100 ">Amount ({banks.length})</p>
+                  {/* <p className="text-3xl font-semibold text-center text-gray-100 ">Amount ({banks.length})</p> */}
                   <svg class="w-6 h-6 text-gray-100 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                   </svg>
                 </div>
@@ -105,7 +105,7 @@ const Dashboard = () => {
             <Link to={'/category'} class="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-500 ease-out  rounded-lg shadow-md group">
               <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-500 -translate-x-full bg-[#2C74B3] group-hover:translate-x-0 ease">
                 <div className="flex flex-col items-center justify-center">
-                  <p className="text-3xl font-semibold text-gray-100 ">Amount ({category.length})</p>
+                  {/* <p className="text-3xl font-semibold text-gray-100 ">Amount ({category.length})</p> */}
                   <svg class="w-6 h-6 text-gray-100 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                   </svg>
                 </div>
