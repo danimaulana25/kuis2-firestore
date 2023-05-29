@@ -41,7 +41,6 @@ const BanksCreate = () => {
   return (
     <div className="m-10">
       <div className="py-4">
-        <h1 className="text-5xl text-white font-semibold mb-3">Create Bank</h1>
         <Link to="/banks">
           <div className="flex items-center">
             <svg className="w-10  rounded-lg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,6 +51,7 @@ const BanksCreate = () => {
             <p className="text-white">Kembali</p>
           </div>
         </Link>
+        <h1 className="text-5xl text-white font-semibold mt-3">Create Bank</h1>
       </div>
       <form>
         <div className="mb-6">
@@ -82,7 +82,7 @@ const BanksCreate = () => {
             id="nomorRekening"
             value={nomorRekening}
             onChange={(e) => setnomorRekening(e.target.value)}
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 max-md:w-1/2 max-md:w-full p-2.5 "
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  w-1/2 max-md:w-full p-2.5 "
             required
           />
         </div>

@@ -67,6 +67,7 @@ const BanksEdit = () => {
                         <p className="text-white">Kembali</p>
                     </div>
                 </Link>
+                <h1 className="text-5xl text-white font-semibold mt-3">Update {name}</h1>
             </div>
             <form>
                 <div className="mb-6">
@@ -109,9 +110,9 @@ const BanksEdit = () => {
                     <button
                         type="submit"
                         onClick={handleSubmit}
-                        className="w-1/2 max-md:w-full px-3 py-4 text-white bg-blue-500 rounded-md focus:bg-blue-600 focus:outline-none"
+                        className="btn bg-yellow-500 hover:bg-yellow-600"
                     >
-                        Edit
+                        Edit Data
                     </button>
                 </div>
             </form>
