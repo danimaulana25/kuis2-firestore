@@ -12,45 +12,53 @@ const VehicleCreate = () => {
 
   const navigate = useNavigate();
 
-    const [name, setNama] = React.useState("");
-    const [color, setColor] = React.useState("");
-    const [price, setPrice] = React.useState("");
+  const [name, setNama] = React.useState("");
+  const [color, setColor] = React.useState("");
+  const [price, setPrice] = React.useState("");
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const docRef = await addDoc(collection(db, "vehicle"), {
-                name,
-                color,
-                price,
-            });
-            navigate("/vehicle");
-            MySwal.fire({
-              icon: 'success',
-              title: 'Data submitted successfully',
-              text: `Your data has been submitted successfully`,
-            });
-            console.log("Document written with ID: ", docRef.id);
-        } catch (e) {
-            console.error("Error adding document: ", e);
-            MySwal.fire({
-              icon: 'error',
-              title: 'Oops...',
-              text: 'Something went wrong!',
-            });
-        }
-    };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const docRef = await addDoc(collection(db, "vehicle"), {
+        name,
+        color,
+        price,
+      });
+      navigate("/vehicle");
+      MySwal.fire({
+        icon: 'success',
+        title: 'Data submitted successfully',
+        text: `Your data has been submitted successfully`,
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+      MySwal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+      });
+    }
+  };
 
 
 
 
   return (
     <div className="m-10">
-        <div className="py-4">
-        <Link to="/vehicle" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Kembali
+      <div className="py-4">
+        <h1 className="text-5xl text-white font-semibold mb-3">Create Vehicle</h1>
+        <Link to="/vehicle" className=" ">
+          <div className="flex items-center">
+            <svg className="w-10  rounded-lg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="Arrow / Chevron_Left">
+                <path id="Vector" d="M15 19L8 12L15 5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </g>
+            </svg>
+            <p className="text-white">Kembali</p>
+          </div>
         </Link>
-        </div>
+      </div>
       <form>
         <div className="mb-6">
           <label
@@ -64,7 +72,7 @@ const VehicleCreate = () => {
             id="name"
             value={name}
             onChange={(e) => setNama(e.target.value)}
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 max-md:w-full p-2.5 "
             required
           />
         </div>
@@ -80,7 +88,7 @@ const VehicleCreate = () => {
             id="color"
             value={color}
             onChange={(e) => setColor(e.target.value)}
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 max-md:w-full p-2.5 "
             required
           />
         </div>
@@ -96,16 +104,16 @@ const VehicleCreate = () => {
             id="price"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 max-md:w-full p-2.5 "
             required
           />
         </div>
         <button
           type="submit"
           onClick={handleSubmit}
-          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="btn bg-yellow-500 hover:bg-yellow-600"
         >
-          Tambah Data
+          Create Data
         </button>
       </form>
     </div>
