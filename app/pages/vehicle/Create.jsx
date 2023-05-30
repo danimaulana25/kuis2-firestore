@@ -47,10 +47,10 @@ const VehicleCreate = () => {
   return (
     <div className="m-10">
       <div className="py-4">
-        <h1 className="text-5xl text-white font-semibold mb-3">Create Vehicle</h1>
-        <Link to="/vehicle" className=" ">
+        <h1 className="mb-3 text-5xl font-semibold text-white">Create Vehicle</h1>
+        <Link to="/vehicle" className="">
           <div className="flex items-center">
-            <svg className="w-10  rounded-lg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="w-10 rounded-lg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g id="Arrow / Chevron_Left">
                 <path id="Vector" d="M15 19L8 12L15 5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </g>
@@ -63,7 +63,7 @@ const VehicleCreate = () => {
         <div className="mb-6">
           <label
             htmlFor="name"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-100"
           >
             Nama
           </label>
@@ -79,7 +79,7 @@ const VehicleCreate = () => {
         <div className="mb-6">
           <label
             htmlFor="Color"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-100"
           >
             Color
           </label>
@@ -95,7 +95,7 @@ const VehicleCreate = () => {
         <div className="mb-6">
           <label
             htmlFor="price"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-100"
           >
             Price
           </label>
@@ -111,7 +111,7 @@ const VehicleCreate = () => {
         <button
           type="submit"
           onClick={handleSubmit}
-          className="btn bg-yellow-500 hover:bg-yellow-600"
+          className="bg-yellow-500 btn hover:bg-yellow-600"
         >
           Create Data
         </button>

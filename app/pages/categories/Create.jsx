@@ -41,10 +41,9 @@ const CategoryCreate = () => {
   return (
     <div className="m-10">
       <div className="py-4">
-        <h1 className="text-5xl text-white font-semibold mb-3">Create Category</h1>
         <Link to="/category">
           <div className="flex items-center">
-            <svg className="w-10  rounded-lg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="w-10 rounded-lg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g id="Arrow / Chevron_Left">
                 <path id="Vector" d="M15 19L8 12L15 5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </g>
@@ -52,12 +51,13 @@ const CategoryCreate = () => {
             <p className="text-white">Kembali</p>
           </div>
         </Link>
+        <h1 className="mt-3 text-5xl font-semibold text-white">Create Category</h1>
       </div>
       <form>
         <div className="mb-6">
           <label
             htmlFor="name"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-100"
           >
             Nama
           </label>
@@ -73,7 +73,7 @@ const CategoryCreate = () => {
         <div className="mb-6">
           <label
             htmlFor="Jenis"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-100"
           >
             Jenis
           </label>
@@ -89,7 +89,7 @@ const CategoryCreate = () => {
         <button
           type="submit"
           onClick={handleSubmit}
-          className="btn bg-yellow-500 hover:bg-yellow-600"
+          className="bg-yellow-500 btn hover:bg-yellow-600"
         >
           Create Data
         </button>

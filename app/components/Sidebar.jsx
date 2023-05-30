@@ -8,9 +8,13 @@ const Sidebar = ({ children }) => {
   return (
     <div>
       <div className="flex ">
-        <div className="w-1/6 ml-1 my-28">
-          <div className="px-2 py-3 h-fit rounded-xl bg-[#144272]">
+        <div className="w-1/6 ">
+          <div className="px-2 py-3 h-screen  bg-[#144272]">
             <ul className="space-y-2 font-medium rounded-xl">
+              <li class="menu-title text-[#eee]  text-center text-3xl">
+                <span>Kuis 2</span>
+              </li>
+              <div className="divider"></div>
               <li>
                 <Link
                   to="/"
